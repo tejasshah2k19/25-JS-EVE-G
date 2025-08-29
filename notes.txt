@@ -37,3 +37,21 @@ Mozilla FireFox :  Spider Monkey
 Google Chrome   :  V8
 
 ------------------------------------------------------------------------------------
+
+Task 1: 
+        read name gender and age from user 
+                if gender is male and age is greater than 17 print eligible for vote 
+                if gender is female and age is greater than 21 print eligible for vote 
+                other wise print note eligible for vote 
+
+
+Task 2: 
+        read marks of three subjes , maths sci and eng 
+        if maths + eng is greater than 180 print PASS 
+        if maths + sci is greater than 190 print PASS 
+        if percentage is greater than 85 print PASS 
+        other wise TRY AGAIN. 
+         
+
+
+------------------------------------------------------------------------------------
