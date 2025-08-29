@@ -1,0 +1,39 @@
+WEB DEV 
+WEB 
+
+website --> collection of webpages 
+
+web page ---> HTML 
+
+
+HTML : static
+
+JS : Dyanmic , interactive 
+CSS : Design 
+
+------------------------------------------------------------------------------------
+
+JavaScript -> PL 
+            -> Scripting Lang. 
+            -> Not JAVA 
+            -> Case Sensitive 
+
+
+------------------------------------------------------------------------------------
+java Script -> 
+        1) internal : HTML 
+        2) external : HTML , new file .js 
+
+
+------------------------------------------------------------------------------------
+C -> HL -> SYS -> LL -> Compiler 
+
+JS -> HL -> WEB BROWSER -> JS Engine 
+
+WEB BROWSER -> JS Engine 
+
+Microsoft IE    :  Chakra   
+Mozilla FireFox :  Spider Monkey 
+Google Chrome   :  V8
+
+------------------------------------------------------------------------------------
