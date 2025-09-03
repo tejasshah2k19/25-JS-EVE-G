@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Calc</title>
+
+    <script>
+        function eligiblityChecker() {
+            //input - read 
+            firstName = document.vote.firstName.value;
+            gender = document.vote.gender.value;
+            age = parseInt(document.vote.age.value);
+
+            //process 
+            if (gender == "male" && age > 17) {
+                alert(firstName + " you are Eligible");
+            } else if (gender == "female" && age > 21) {
+                alert(firstName + " you are Eligible");
+
+            } else {
+                alert(firstName + " you are Not Eligible");
+            }
+            //output 
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <form name="vote">
+        FirstName : <input type="text" name="firstName" /><br><Br>
+        Gender : Male<input type="radio" value="male" name="gender" />
+        Female<input type="radio" value="female" name="gender" /><br><br>
+        Age : <input type="text" name="age" /><br><br>
+
+        <input type="button" value="Submit" onclick="eligiblityChecker()" />
+    </form>
+
+</body>
+
+</html>
