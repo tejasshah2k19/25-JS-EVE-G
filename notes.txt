@@ -74,9 +74,88 @@ convert above in form { task1 and task 2}
 
 
  Task 1 : 
-  read marks of three subjes , maths sci and eng 
+  read marks of three subjects , maths sci and eng 
         if maths + eng is greater than 180 print PASS 
         if maths + sci is greater than 190 print PASS 
         if percentage is greater than 85 print PASS 
         other wise TRY AGAIN. 
          
+
+-------------------------------------------------------
+
+
+C:
+        int  a = 10; 
+        a = 20; 
+        a = 30; 
+
+        #define SIZE 5 
+        const int SIZE = 5;  // constant variable -> value fix -> you can not modify the value 
+
+        SIZE =12; //error 
+
+JS: 
+        a = 10; 
+
+        var a; 
+        a=10;
+        a=20;
+
+        let a;
+        a=10;
+        a=20;
+
+        var , let 
+
+        const SIZE = 10;
+
+
+        var , let , const 
+
+
+        var vs let 
+        var a = 123;
+        var a = "ram";//allow  
+
+        let a = 123;
+        let a = "ram";//reDefine error 
+
+
+        let a = 190;
+        a = 199; //no error 
+
+        const a = 199;
+        a = 100; //error 
+
+
+
+---------------------------------------------------------------------------------------------------
+
+comments :-> 
+        C: 
+                single line -> //  
+                multi line ->  /*   */ 
+
+        HTML:
+                <!-- comments line(s) -->
+
+        JS: 
+                single line -> //  
+                multi line ->  /*   */ 
+         
+---------------------------------------------------------------------------------------------------
+
+
+HTML -> <body bgColor="yellow">
+
+        </body> 
+
+js -> 
+        document.bgColor="yellow"
+
+
+
+-------------------------------------------------------
+bYear -> Age -> 18>= -> BgColor -> green -> eligible for voting 
+                -18  -> bgColor -> red -> Not eligible for voting 
+-------------------------------------------------------
