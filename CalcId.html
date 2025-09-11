@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function calculator() {
+            //read 
+            let n1 = parseInt(document.getElementById("n1").value);
+            let n2 = parseInt(document.getElementById("n2").value);
+            let choice = document.getElementById("choice").value; 
+            //operation 
+
+            if(choice ==  "Addition" ){
+                ans = n1+n2; 
+            }else if(choice == "Subtraction"){
+                ans = n1 - n2;
+            }else if(choice == "Division"){
+                ans = n1 / n2 ;
+            }else if (choice == "Multiplication"){
+                ans = n1 * n2 ; 
+            }else{
+                ans = "Invalid Choice";
+            }
+
+            // document.write(ans);
+            document.getElementById("result").innerText = ans; 
+
+            //output
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h2>Calc</h2>
+
+    No.1 : <input type="text" id="n1" /><br><br>
+    No.2 : <input type="text" id="n2" /><br><br>
+
+    Choice : <select id="choice">
+        <option>--Select Choice---</option>
+        <option>Addition</option>
+        <option>Subtraction</option>
+        <option>Division</option>
+        <option>Multiplication</option>
+    </select>
+    <br><br>
+    <input type="button" value="Submit" onclick="calculator()"/>
+    <br><br> 
+
+    <div id="result"></div>
+
+
+</body>
+
+</html>
