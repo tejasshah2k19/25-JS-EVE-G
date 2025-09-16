@@ -160,4 +160,71 @@ bYear -> Age -> 18>= -> BgColor -> green -> eligible for voting
                 -18  -> bgColor -> red -> Not eligible for voting 
 -------------------------------------------------------
 
+HTML -> JS -> Script ->
 
+type => 2 => 
+
+case ?  yes 
+
+comments -> single multi -> 
+
+prompt() -> input -> string -> parseInt() -> parseFloat() 
+alert() -> output 
+
+
+form -> name="n1" => read ? => document.formName.n1.value 
+
+
+id="salary" => document.getElementById("salary").value 
+
+
+var let const => const => fix value variable => 
+
+-------------------------------------------------------
+
+
+form 
+        1 
+        2 
+        3
+
+
+
+
+        onclick=fun 
+
+
+
+        func 
+                        read 
+                        print 
+
+-------------------------------------------------------
+
+
+name  vs id 
+
+
+id -> unique -> single item 
+name -> more than 1 time -> multiple time -> duplicate 
+
+
+india -> PM -> id 
+india -> capital -> id 
+india -> national animal -> id 
+india -> super start -> name 
+india -> CM -> name 
+
+
+
+First Name : id 
+last Name : id 
+email : id 
+password : id 
+confirm Password : id 
+gender : name 
+city : id 
+hobby : name 
+address : id
+
+-------------------------------------------------------
