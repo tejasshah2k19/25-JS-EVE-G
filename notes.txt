@@ -228,3 +228,20 @@ hobby : name
 address : id
 
 -------------------------------------------------------
+
+id vs name 
+
+document.getElementById
+document.getElementsByName 
+
+innerText vs innerHTML 
+
+
+-------------------------------------------------------
+events  ---> 
+            listen -> listeners ->  react --> 
+
+            onclick 
+            ondblclick 
+
+-------------------------------------------------------

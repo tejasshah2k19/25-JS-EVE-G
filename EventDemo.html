@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function funOnClick(){
+            // alert("click");
+            let a = 10; 
+            let name = "royal";
+            //Date class 
+            //object 
+            let d = new Date();
+            // alert(d);
+
+            let h = d.getHours();
+            let m = d.getMinutes();
+
+            if( h >= 6 && h<= 11){
+                alert("Good Morning "+h+":"+m);
+            }else if(h > 11 && h<=17){
+                alert("Good Noon "+h+":"+m);
+            }else{
+                alert("Good Evening "+h+":"+m);
+            }
+        }
+
+        function chnageBlb(){
+            if( document.getElementById("blb").src.match("pic_bulboff.gif") ){
+                document.getElementById("blb").src = "pic_bulbon.gif";
+            }else{
+                  document.getElementById("blb").src = "pic_bulboff.gif";
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <input type="button"  value="onclick" onclick="funOnClick()"/><br><br>
+    <input type="button" value="onDblClick" ondblclick="funOnClick()"/><br><Br>
+
+
+        <img src="pic_bulboff.gif" id="blb" onclick="chnageBlb()" >
+</body>
+</html>
