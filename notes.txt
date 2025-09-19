@@ -245,3 +245,49 @@ events  --->
             ondblclick 
 
 -------------------------------------------------------
+
+        onmouseover
+        onmouseout
+
+        onkeydown
+        onkeyup
+
+        onclick 
+        ondblclick 
+
+        onload
+        
+-------------------------------------------------------
+        onmouseover
+        onmouseout
+
+
+Math.random() 
+0.158756215856
+
+Math.random() * 10000 
+1587.56215856
+
+parseInt(Math.random() * 10000 )
+1587
+
+------------------------------------------------------------
+
+                FORM VALIDATION 
+
+                First Name : [        ]  Please Enter First Name 
+
+                        [submit]
+
+                First Name : XYZ 
+
+
+        LastName 
+        Email
+        Password 
+        Gender 
+        City 
+        Address 
+
+        
+------------------------------------------------------------

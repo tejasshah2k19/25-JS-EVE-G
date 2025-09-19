@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function funZoomIn(){
+            document.getElementById("data").style.fontSize = "40px"; 
+        }
+
+        function funZoomOut(){
+            document.getElementById("data").style.fontSize = "20px";
+        }
+
+        function changeBG(){
+            document.body.style.backgroundColor = "#"+parseInt(Math.random()*10000);
+        }
+    </script>
+</head>
+<body>
+
+    <div  id="data" style="font-size: 20px;" onmouseover="funZoomIn()" onmouseout="funZoomOut()" > Royal Edu - Ahmedabad </div>
+    <br><Br>
+
+        <input type="button" value="Change BG"  onclick="changeBG()"/>
+</body>
+</html>
