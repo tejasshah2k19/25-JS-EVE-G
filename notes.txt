@@ -291,3 +291,17 @@ parseInt(Math.random() * 10000 )
 
         
 ------------------------------------------------------------
+
+First Name : [         ]   Please Enter FirstName 
+Age        : [         ]   Please Enter Age 
+Gender     : Male()  Female()  Please Select Gender 
+        [Submit]
+
+
+
+gender => male , age 18+ => eligible for voting 
+gender => female , age 19+ => eligible for voting 
+not eligible 
+
+
+------------------------------------------------------------
