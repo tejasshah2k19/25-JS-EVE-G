@@ -305,3 +305,9 @@ not eligible
 
 
 ------------------------------------------------------------
+
+c -> true : 1 , false : 0 
+js -> boolean -> false , true 
+
+let a = 10;   // int 
+let x = true; //boolean 
