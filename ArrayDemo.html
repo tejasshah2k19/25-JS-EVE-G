@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let a = [11,22,33,44,55];
+
+        console.log(a);
+        console.log(a[0]);
+        console.log(a[4]);
+        console.log(a.length);
+        
+        console.log("elements in array => ");
+
+        let sum =0 ; 
+        let max = a[0]; //11 
+        for(i=0 ; i<a.length ; i++){
+            console.log(a[i]);
+            sum = sum + a[i];
+            if(a[i] > max ){
+                max = a[i];//33  
+            }
+        }
+        
+        console.log("sum -> "+sum);
+        console.log("max -> "+max);
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

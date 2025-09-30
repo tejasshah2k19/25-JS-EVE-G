@@ -311,3 +311,45 @@ js -> boolean -> false , true
 
 let a = 10;   // int 
 let x = true; //boolean 
+
+------------------------------------------------------------
+
+let var const 
+
+
+Addition of two numb -> n1,n2 ans 
+
+10 num -> 10
+100 num -> 100 
+
+array -> collection n number of data / items / elements 
+single data name 
+
+int a[5]; //c 
+
+let a = [] ; //dyanmic 
+
+let a = [11,12,13,14,15]; 
+
+
+document.write(a); 
+
+console.log(a); //11 12 13 14 15 
+
+
+if you want to access single data item you can access via index 
+console.log(a[0]) // 11 
+
+index starts with 0
+and 
+ends with size - 1
+
+100 array -> a[99]
+
+1) print sum of all elements : array 
+2) print max num from above array 
+
+---------------------------------------------------------
+
+
+
