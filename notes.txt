@@ -352,4 +352,109 @@ ends with size - 1
 ---------------------------------------------------------
 
 
+how to declare blank array in js ? 
+let a = [ ] 
+
+
+__________ function is use to add item in array ? 
+
+
+how to check total elements in array ? 
+a.length 
+
+
+how to print last item of array X , but size is unknown.
+X[ X.length - 1 ]
+
+ 
+
+---------------------------------------------------------------------------
+
+how to remove element from array ? 
+
+pop() // last element 
+
+a = [10,20,30,40,50]
+a.pop(); // 50 remove 
+
+
+shift() // first element 
+
+splice(start,count) // remove from start with given count 
+
+x = [11,22,33,44,55,66,77,88]
+(8) [11, 22, 33, 44, 55, 66, 77, 88]
+x.splice(6,1)
+[77]
+x
+(7) [11, 22, 33, 44, 55, 66, 88]
+
+x = [11,22,33,44,55,66,77,88,99]
+
+
+
+sub array -> 
+
+x = [11,22,33,44,55,66,77,88,99]
+
+[44,55,66,77]
+
+x.slice(startIndex,endIndex); 
+x.slice(3,7); // start index --> inclusive 
+                //end index -> exclusive 
+
+x.slice(3,7) //3 4 5 6 
+x = ["ram","shyam","ganshyam","ravan","bharat","laxman"]
+(6) ['ram', 'shyam', 'ganshyam', 'ravan', 'bharat', 'laxman']
+    x.slice(0,2)
+(2) ['ram', 'shyam']
+    x.slice(0,4)
+(4) ['ram', 'shyam', 'ganshyam', 'ravan']
+    x.slice(1,4)
+(3) ['shyam', 'ganshyam', 'ravan']
+
+
+
+search a number ->
+
+indexOf() 
+
+x = [11,22,33,44,55,66,77,88,99]
+
+x.indexOf(55)   ; // it will return index of 55 if present 
+x.indexOf(440);  // it will return -1 if not present 
+
+x = [11,22,33,44,55,66,77,88,99,55,666,777,888]
+
+x.indexOf(55);//4 
+x.lastIndexOf(55);//9 
+
+
+
+x = [11,22,33,44,55,66,77,88,99,55,666,777,888,55,66,55]
+
+------------------------------------------------------------------------------
+
+
+sort() => asc order sort 
+reverse() => 
+sort(function)
+
+toSorted()
+toReversed() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -6,14 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        let a = []
+        let a = []//empty array 
 
         function fnArray() {
-            let num = parseInt(document.getElementById("num").value);
+            let num = parseInt( document.getElementById("num").value );
             a.push(num);
+            document.getElementById("num").value = "";
             console.log(a);
-
         }
+
+        function fnPrintArray(){
+            document.getElementById("printArray").innerHTML = a ; 
+        }
+
+        function fnSortArray(){
+            a.sort(mySorting); 
+            document.getElementById("printArray").innerHTML = a; 
+        }
+         
+        function mySorting(x,y){
+            if(x > y ){
+                return 1;
+            }else if(x < y){
+                return -1;
+            }else{
+                return 0;
+            }
+        }
+
+        function fnRevArray(){
+            a.reverse();
+            document.getElementById("printArray").innerHTML = a; 
+        }
+
+
     </script>
 </head>
 
@@ -22,8 +48,14 @@
 
     <input type="button" value="Submit" onclick="fnArray()" />
 
-        <input type="button" value="MAX" onclick="" />
+        <input type="button" value="Print" onclick="fnPrintArray()" />
+   
+    <input type="button" value="Sort"  onclick="fnSortArray()"/>
 
+    <input type="button" value="Reverse"  onclick="fnRevArray()"/>
+
+        <br><Br>
+        <div id="printArray"></div>
 </body>
 
 </html>
