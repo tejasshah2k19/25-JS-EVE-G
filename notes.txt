@@ -442,7 +442,9 @@ sort(function)
 
 toSorted()
 toReversed() 
-
+------------------------------------------------------------------------------
+1) internal  { HTML <script></script> }
+2) external  { html js } 
 
 
 
