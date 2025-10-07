@@ -92,3 +92,15 @@ let maxNum  = Math.max(...abc) // 11,22,344
 
 console.log("Max => "+maxNum);
 
+
+
+let myA = [11,23,42,23,4,2]
+
+function mySort(a,b){
+    return a-b;
+}
+
+// myA.sort(mySort); 
+let sortA = myA.toSorted(mySort);
+
+
