@@ -85,7 +85,10 @@ console.log(oddArray);
 
 
 
+let abc = [11,22,344,55,66];
 
 
+let maxNum  = Math.max(...abc) // 11,22,344
 
+console.log("Max => "+maxNum);
 
