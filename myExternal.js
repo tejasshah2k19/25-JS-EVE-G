@@ -103,4 +103,6 @@ function mySort(a,b){
 // myA.sort(mySort); 
 let sortA = myA.toSorted(mySort);
 
+let reA = myA.toReversed(); 
+
 

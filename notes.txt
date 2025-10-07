@@ -448,8 +448,15 @@ toReversed()
 ------------------------------------------------------------------------------
 
 
+String --> 
+in c-->
+        'x' : character 
+        "xx" : String 
 
+in js -> 
+        'x' 'xxx' "xx" -> string
 
+let myStr = "royal" ;
 
 
 
