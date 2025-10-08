@@ -464,7 +464,56 @@ let myStr = "royal" ;
 
 
 
+1) string with random data -> count total vowels from string 
+2) count total digits from string 
+3) reverse string     { print original and reverse both } 
+
+------------------------------------------------------------
+
+4) count total words in a string 
+        str -> jony jony yes papa 
+        ans : 4 
+
+5) remove character from string 
+        str -> jony jony yes papa 
+        char -> j 
+        output -> ony ony yes papa 
+
+6) perfectDigitString ->
+        if all the characters are digits in string then it calls perfectDigitString 
+        other wise it calls normal string 
+
+7) find out the most occurence character in string 
+        str -> jony jony yes papa 
+        out -> y 
+
+
+------------------------------------------------------------
+
+
+can we have more than 1 js file in 1 html file ? 
+
+amazon 
+        iphone.js
+                fnIphoneGetData(){
+
+                }
+
+        laptop.js
+                fnLaptopGetData(){
+
+                }
+
+
+                getData(){
+
+                }
+
+                getElementById()
+
+
+                toUpperCase()
 
 
 
-
+         

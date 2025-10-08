@@ -83,8 +83,10 @@ console.log(myName.repeat(3));
 
 
 
-//count total number of digits from string 
-//count total number of vowels from string 
+//str ="jony 123 jon234 yes pa2pa2"; 
+
+//count total number of digits from string  : 8  
+//count total number of vowels from string  : aeiou 
 //reverse string , print original and reverse both string 
 //string palindrome or not 
 
