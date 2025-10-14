@@ -1,0 +1,46 @@
+Web Development ->
+
+
+website -> collections of web pages 
+
+HTML : web page {static}
+CSS  : Design 
+JS   : interactive , dyanmic 
+
+---------------------------------------------------------------
+JavaScript - file - stand alone - X 
+---------------------------------------------------------------
+type 
+
+    1)  internal js [ HTML , no separate file  ] 
+    2)  external js [ HTML , .JS : separate file ]
+
+---------------------------------------------------------------
+how? <script> </script> 
+
+where?  any where in the page 
+        1) head 
+        2) bottom of the body 
+
+
+---------------------------------------------------------------
+BROWSER msg print 
+    document.write()
+
+console print 
+    console.log()
+
+---------------------------------------------------------------
+
+
+let 
+var 
+const 
+
+---------------------------------------------------------------
+conditional statement -> 
+1) num -> odd even 
+2) find out the max from two numbers 
+
+3) num -> divisible by 3 or 10 
+4) find out max from three numbers 
