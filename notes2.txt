@@ -44,3 +44,118 @@ conditional statement ->
 
 3) num -> divisible by 3 or 10 
 4) find out max from three numbers 
+---------------------------------------------------------------
+repeat -> 
+
+    print name 10 20 30 50 
+
+    loop -> 
+        for
+        while
+        do...while
+
+
+1) print all the numbers between 1 to 10 
+
+    for(let i=1 ; i<= 10 ; i++){
+        console.log(i); 
+    }
+
+
+2) start=10 
+   end=30 
+   print all the numbers between start and end 
+     for(let i=start ; i<= end ; i++){
+        console.log(i); 
+    }
+
+
+3) start=10 
+   end=30 
+   print all the numbers between start and end which can divisible by 3 or 10  
+    for(let i=start ; i<= end ; i++){
+        if(i%3 == 0 || i%10 == 0)
+            console.log(i); 
+    }
+
+
+
+4) start=10 
+   end=30 
+   print all the numbers between start and end which 
+    having 0 3 or 7 in the end [ lastdigit]
+    10-30
+    10 13 17 20 23 27 30 
+
+     for(let i=start ; i<= end ; i++){
+        if( i%10 == 0 || i%10 == 3 || i%10 == 7 )
+            console.log(i); 
+    }
+
+
+5) H.w 
+    num 45 => 9
+    num 157 => 13
+    num 81 => 9
+
+--------------------------------------------------------------
+
+10 num sum 
+20 
+50
+
+array -> collections of n number of items 
+
+
+let a = []; //array 
+let arr = [10,20,30,40,50]; 
+
+console.log(arr); 10 20 30 40 50 
+
+//how to add new item in array 
+push()
+
+arr.push(100); //add item at the end of array 
+
+console.log(arr); 10 20 30 40 50 100 
+
+//how to remove an element 
+pop() 
+
+arr.pop(); //remove the last element from array 
+console.log(arr); 10 20 30 40 50 
+
+//how many elements you have?
+length 
+console.log(arr.length); //5 
+
+//individual element 
+using index , starts with 0 
+
+//first element 
+    console.log(arr[0])
+
+//print all the element one by one 
+
+console.log(arr[0]);
+console.log(arr[1]);
+console.log(arr[2]);
+console.log(arr[3]);
+console.log(arr[4]);
+
+
+for(i = 0 ;i < arr.length ;i++){
+    console.log(arr[i]);
+}
+
+
+1) print sum of all elements from array
+2) find out max and min number from array 
+
+3) reverse array without using inbuilt function  
+4) check array is palindrome or not 
+    a=[1,2,3,2,1] => palindrome 
+    a =[1,2,1] => palindrome 
+    a = [1,2,3,4,3,1] => not palindrome 
+
+-------------------------------------------------------------------------------------
