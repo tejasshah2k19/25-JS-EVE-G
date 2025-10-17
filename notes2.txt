@@ -159,3 +159,74 @@ for(i = 0 ;i < arr.length ;i++){
     a = [1,2,3,4,3,1] => not palindrome 
 
 -------------------------------------------------------------------------------------
+
+let arr = [11,22,33,44,55];
+
+for(let i=0 ; i < arr.length ; i++ ){
+    console.log(arr[i]); 
+}
+
+//6 
+//2 
+forEach 
+        read only 
+        main array no modification 
+        access each element 
+
+1) print all the data items from array using forEach 
+
+let arr = [11,22,33,44,55];
+
+arr.forEach( tmp => {
+    console.log(tmp); 
+}); 
+
+
+function myPrint(tmp){
+    console.log(tmp);
+}
+
+arr.forEach(myPrint); 
+
+
+2)  find out sum of all elements from array : forEach 
+    let sum = 0; 
+
+    arr.forEach( tmp => {
+        sum = sum + tmp; 
+    }); 
+
+    console.log("sum => "+sum); 
+
+3) count odd elements and even from array : forEach
+    let oddCounter = 0;
+    let evenCounter = 0;
+
+    arr.forEach(tmp => {
+        if(tmp % 2 == 0 ){
+            evenCounter++ ;
+        }else{
+            oddCounter++;
+        }
+    }); 
+
+    console.log("odd counter => "+oddCounter);
+    console.log("even counter => "+evenCounter); 
+
+  H.w =>    find out min and max from array using forEach()   
+------------------------------------------------------------------------------------------------------------
+filter() 
+     => each element , based on condition element select / reject ,selected -> new array , main array no modification 
+
+let arr = [11,22,33,44,55];
+
+let evenArr = arr.filter(tmp => tmp%2 ==0 );
+let oddArr  = arr.filter( tmp => tmp % 2 != 0 );
+
+
+2)  let percentage = [45,56,54,67,76,78,54,89,87,65,89,98,34]; 
+    create percentage70 array having all the students who's percentage is greater than 70 
+
+------------------------------------------------------------------------------------------------------------
+
+ 
