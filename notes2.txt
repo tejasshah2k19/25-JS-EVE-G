@@ -227,6 +227,21 @@ let oddArr  = arr.filter( tmp => tmp % 2 != 0 );
 2)  let percentage = [45,56,54,67,76,78,54,89,87,65,89,98,34]; 
     create percentage70 array having all the students who's percentage is greater than 70 
 
+3)  const marks = [35, 78, 92, 40, 25,95,25,74,85,57];
+    we need to find data set having all the students 
+        1) who got distinction 70+ 
+        2) who fail in subject < 35
+        3) who got A  90+ 
 ------------------------------------------------------------------------------------------------------------
 
- 
+Event -> listent -> listener -> action -> 
+
+
+button click double click 
+key press down up 
+mouse over out 
+
+
+button -> click 
+          double click 
+
