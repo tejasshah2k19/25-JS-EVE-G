@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+
+        let bomb1 = parseInt(Math.random() * 10) % 9 + 1;//0.25875632569 
+        let bomb2 = parseInt(Math.random() * 10) % 9 + 1;
+        let bomb3 = parseInt(Math.random() * 10) % 9 + 1;
+
+        while (bomb1 == bomb2 || bomb1 == bomb3 || bomb2 == bomb3) {
+            bomb1 = parseInt(Math.random() * 10) % 9 + 1;//0.25875632569 
+            bomb2 = parseInt(Math.random() * 10) % 9 + 1;
+            bomb3 = parseInt(Math.random() * 10) % 9 + 1;
+        }
+
+        console.log(bomb1);
+        console.log(bomb2);
+        console.log(bomb3);
+
+
+
+        function playGame(id) {
+
+            if (id == bomb1 || id == bomb2 || id == bomb3) {
+                document.getElementById(id).src = "bomb.png";
+
+            } else {
+                document.getElementById(id).src = "diamond.png";
+            }
+        }
+    </script>
+
+    <style>
+        td {
+            height: 100px;
+            width: 100px;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 align="center">Diamond Game</h1>
+    <br><br><br><br>
+    <table align="center">
+
+        <tr>
+            <td onclick="playGame(1)" align="center"> <img id="1"> </td>
+            <td onclick="playGame(2)" align="center"> <img id="2"> </td>
+            <td onclick="playGame(3)" align="center"> <img id="3"> </td>
+        </tr>
+
+        <tr>
+            <td onclick="playGame(4)" align="center"> <img id="4"> </td>
+            <td onclick="playGame(5)" align="center"> <img id="5"> </td>
+            <td onclick="playGame(6)" align="center"> <img id="6"> </td>
+        </tr>
+
+        <tr>
+            <td onclick="playGame(7)" align="center"> <img id="7"> </td>
+            <td onclick="playGame(8)" align="center"> <img id="8"> </td>
+            <td onclick="playGame(9)" align="center"> <img id="9"> </td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Enter Number : <input type="number" id="data" /><br><br>
+
+    <input type="button" value="Check" onclick="fnGame()" />
+    <script>
+        let winningNum = parseInt(Math.random() * 100);
+        let lifeLine = 5;
+
+        function fnGame() {
+            let guessNum = document.getElementById("data").value;
+            if (guessNum == undefined || guessNum == "") {
+                alert("Please Enter Number");
+            } else {
+                //input 
+                guessNum = parseInt(guessNum);
+                if (guessNum == winningNum) {
+
+                    location.href = "GameWin.html";
+
+                } else {
+                    lifeLine--;
+                    if (guessNum > winningNum) {
+                        alert("Your guess is too HIGH");
+                    } else {
+                        alert("Your guess is too LOW");
+                    }
+
+                    if (lifeLine == 0) {
+                        location.href = "GameOver.html";
+                    }
+                }
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

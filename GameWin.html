@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Level Complete — You Win!</title>
+
+<script>
+    function fnPlayAgain(){
+        location.href = "GuessNumGame.html"
+    }
+</script>
+<style>
+  :root{
+    --bg1: #0f1724;    /* deep navy */
+    --bg2: #081025;    /* darker */
+    --accent: #ffd166; /* gold */
+    --accent-2: #06b6d4; /* cyan */
+    --muted: #94a3b8;
+    --card: rgba(255,255,255,0.03);
+    --glass: rgba(255,255,255,0.04);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+                 "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(6,11,25,0.6), transparent),
+                linear-gradient(180deg,var(--bg1),var(--bg2));
+    color:#e6eef8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px;
+  }
+
+  .win-card{
+    position:relative;
+    width:min(920px,95%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:18px;
+    padding:36px;
+    box-shadow: 0 10px 40px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    overflow:hidden;
+    display:grid;
+    grid-template-columns: 260px 1fr;
+    gap:24px;
+    align-items:center;
+    min-height:360px;
+  }
+
+  /* decorative shimmer */
+  .win-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background: linear-gradient(120deg, rgba(255,255,255,0.02), transparent 25%, rgba(255,255,255,0.01) 50%);
+    transform:translateX(-30%);
+    animation: shimmer 6s linear infinite;
+  }
+  @keyframes shimmer { from{transform:translateX(-30%)} to{transform:translateX(120%)} }
+
+  .trophy-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+  }
+
+  .trophy {
+    width:160px;
+    height:160px;
+    display:grid;
+    place-items:center;
+    background: radial-gradient(circle at 30% 20%, rgba(255,209,102,0.18), transparent 20%),
+                linear-gradient(180deg,#ffd166,#ffb703);
+    border-radius:999px;
+    box-shadow: 0 12px 30px rgba(255,177,40,0.12), 0 6px 8px rgba(2,6,23,0.6);
+    transform:translateY(-6px);
+    animation: pop-in 700ms cubic-bezier(.2,.9,.3,1) both;
+  }
+  @keyframes pop-in {
+    0%{transform:scale(.65) translateY(0); opacity:0}
+    60%{transform:scale(1.08) translateY(-10px); opacity:1}
+    100%{transform:scale(1) translateY(-6px)}
+  }
+
+  .trophy svg{ width:88px; height:88px; filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4)) }
+
+  .level-badge {
+    background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    padding:8px 14px;
+    border-radius:999px;
+    font-weight:600;
+    color:var(--muted);
+    font-size:13px;
+    border: 1px solid rgba(255,255,255,0.02);
+  }
+
+  .main {
+    padding:8px 6px;
+  }
+
+  .title {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:12px;
+  }
+  h1{
+    font-size:36px;
+    margin:0;
+    letter-spacing:-0.02em;
+  }
+  .sub{
+    color:var(--muted);
+    margin-top:8px;
+    font-size:15px;
+    line-height:1.4;
+    max-width:60ch;
+  }
+
+  .score-panel{
+    margin-top:20px;
+    display:flex;
+    gap:14px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .stat{
+    background:var(--glass);
+    padding:10px 14px;
+    border-radius:12px;
+    min-width:110px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.02);
+  }
+  .stat .num{
+    display:block;
+    font-size:20px;
+    font-weight:700;
+    color:#fff;
+  }
+  .stat .lbl{ font-size:12px; color:var(--muted); margin-top:3px }
+
+  .actions{
+    margin-top:26px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .btn{
+    -webkit-tap-highlight-color: transparent;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 16px;
+    border-radius:12px;
+    font-weight:700;
+    cursor:pointer;
+    border:0;
+    outline:0;
+    background:linear-gradient(90deg,var(--accent), #ffb703);
+    color:#0b1220;
+    box-shadow: 0 8px 24px rgba(255,183,34,0.12), 0 2px 0 rgba(0,0,0,0.2) inset;
+    transition:transform .14s ease, box-shadow .14s ease;
+  }
+  .btn:active{ transform:translateY(2px) scale(.998) }
+  .btn.secondary{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.06);
+    color:var(--accent-2);
+    font-weight:700;
+    box-shadow:none;
+  }
+  .btn.ghost{
+    background:transparent;
+    color:var(--muted);
+    border:1px dashed rgba(255,255,255,0.03);
+  }
+
+  /* small screens */
+  @media (max-width:720px){
+    .win-card{ grid-template-columns: 1fr; text-align:center; padding:24px; gap:18px }
+    .trophy { margin:0 auto }
+    .main { order:2 }
+  }
+
+  /* subtle confetti holder for pointer events */
+  #confetti-canvas{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:2;
+  }
+
+  /* accessible focus */
+  .btn:focus { box-shadow: 0 0 0 4px rgba(6,182,212,0.12); border-radius:12px; }
+  .sr-only{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
+</style>
+</head>
+<body>
+  <div class="win-card" role="dialog" aria-labelledby="win-title" aria-describedby="win-desc">
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <div class="trophy-wrap" aria-hidden="false">
+      <div class="level-badge" id="level-badge">Level Completed</div>
+      <div class="trophy" title="Trophy">
+        <!-- simple trophy icon -->
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <g transform="translate(0 2)">
+            <path d="M18 6c0-3.3 2.7-6 6-6h16c3.3 0 6 2.7 6 6v2c0 8-6 14-14 15v3h6v4H20v-4h6v-3C24 22 18 16 18 8V6z" fill="#fff" opacity="0.95"/>
+            <ellipse cx="32" cy="49" rx="12" ry="4" fill="#ffd166" opacity="0.95"/>
+            <path d="M26 44h12v4H26z" fill="#ffb703" />
+          </g>
+        </svg>
+      </div>
+      <div style="font-size:13px;color:var(--muted)">Champion</div>
+    </div>
+
+    <div class="main">
+      <div class="title">
+        <h1 id="win-title">You Win! 🎉</h1>
+        <div style="min-width:8px"></div>
+        <!-- <div style="background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent); padding:6px 10px; border-radius:8px; color:var(--muted); font-weight:600;">
+          +120 XP
+        </div> -->
+      </div>
+
+      <p class="sub" id="win-desc">
+        Fantastic play — you cleared the level, win the round and earn a trophy!
+        Use your rewards to upgrade abilities or challenge the next level. Keep going!
+      </p>
+
+      <!-- <div class="score-panel" aria-hidden="false">
+        <div class="stat" role="status" aria-label="Score 12450">
+          <span class="num" id="score">12,450</span>
+          <span class="lbl">Score</span>
+        </div>
+        <div class="stat" role="status" aria-label="Time 02:18">
+          <span class="num" id="time">02:18</span>
+          <span class="lbl">Time</span>
+        </div>
+        <div class="stat" role="status" aria-label="Coins 340">
+          <span class="num" id="coins">340</span>
+          <span class="lbl">Coins</span>
+        </div>
+      </div> -->
+
+      <div class="actions" role="group" aria-label="Post-win actions">
+        <button class="btn" id="playAgainBtn" type="button" onclick="fnPlayAgain()" title="Play Again">🔁 Play Again</button>
+        <!-- <button class="btn secondary" id="nextLevelBtn" type="button" title="Next Level">➡️ Next Level</button> -->
+        <!-- <button class="btn ghost" id="shareBtn" type="button" title="Share your win">🔗 Share</button> -->
+      </div>
+    </div>
+  </div>
+
+<script>
+/* --------- Confetti (lightweight) ---------- */
+/* small, dependency-free confetti for celebration */
+(function(){
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [], anim;
+  const colors = [
+    "#ffd166","#06b6d4","#ef476f","#06d6a0","#8ecae6","#ffd166"
+  ];
+
+  function resize(){
+    w = canvas.width = canvas.clientWidth;
+    h = canvas.height = canvas.clientHeight;
+  }
+  window.addEventListener('resize', resize, {passive:true});
+  resize();
+
+  function rand(min,max){ return Math.random()*(max-min)+min; }
+
+  function makeParticle(x, y){
+    return {
+      x, y,
+      vx: rand(-2.5,2.5),
+      vy: rand(-7,-3),
+      r: Math.round(rand(6,12)),
+      ttl: Math.round(rand(60,120)),
+      age:0,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      rot: rand(0,Math.PI*2),
+      vr: rand(-0.12,0.12)
+    };
+  }
+
+  function burst(count=40){
+    const rect = canvas.getBoundingClientRect();
+    const cx = rect.width/2;
+    const cy = rect.height/2.6;
+    for(let i=0;i<count;i++) particles.push(makeParticle(cx + rand(-40,40), cy + rand(-10,40)));
+    if(!anim) loop();
+  }
+
+  function update(){
+    for(let i=particles.length-1;i>=0;i--){
+      const p = particles[i];
+      p.age++;
+      p.vy += 0.24; // gravity
+      p.vx *= 0.99;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rot += p.vr;
+      if(p.age > p.ttl || p.y - p.r > h + 20) particles.splice(i,1);
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(const p of particles){
+      ctx.save();
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.rot);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.6); // a tiny rectangle piece
+      ctx.restore();
+    }
+  }
+
+  function loop(){
+    update();
+    draw();
+    anim = particles.length ? requestAnimationFrame(loop) : null;
+  }
+
+  // expose
+  window.__confetti = { burst };
+})();
+
+/* trigger confetti on load */
+window.addEventListener('load', () => {
+  // small initial burst
+  if(window.__confetti) window.__confetti.burst(56);
+});
+
+/* --------- Buttons: interactive demo behavior ---------- */
+// document.getElementById('playAgainBtn').addEventListener('click', () => {
+//   // In a real game, you'd restart the level logic.
+//   // Here we just show a confetti burst and bump score for demo.
+//   const s = document.getElementById('score');
+//   let val = parseInt(s.textContent.replace(/,/g,'')) || 0;
+//   val += 1200;
+//   s.textContent = val.toLocaleString();
+//   if(window.__confetti) window.__confetti.burst(36);
+//   animatePulse(document.querySelector('.trophy'));
+// });
+
+document.getElementById('nextLevelBtn').addEventListener('click', () => {
+  // navigate to next level — replace with your own routing logic:
+  const badge = document.getElementById('level-badge');
+  const curText = badge.textContent || '';
+  // easy demo increment of level number if present
+  const m = curText.match(/Level\s+(\d+)/i);
+  if(m){
+    const next = parseInt(m[1],10) + 1;
+    badge.textContent = `Level ${next} • New Challenge`;
+  } else {
+    badge.textContent = 'Next Level';
+  }
+  if(window.__confetti) window.__confetti.burst(28);
+});
+
+document.getElementById('shareBtn').addEventListener('click', async () => {
+  const title = 'I just won!';
+  const text = `I beat Level and scored ${document.getElementById('score').textContent} points!`;
+  const url = location.href;
+  if(navigator.share){
+    try{ await navigator.share({ title, text, url }); }
+    catch(e){ alert('Share canceled'); }
+  } else {
+    // fallback: copy to clipboard
+    try{
+      await navigator.clipboard.writeText(`${title}\n${text}\n${url}`);
+      alert('Win copied to clipboard — share it anywhere!');
+    }catch(e){
+      alert('Could not copy. Try manually sharing.');
+    }
+  }
+});
+
+/* small visual pulse */
+function animatePulse(el){
+  if(!el) return;
+  el.animate([
+    { transform: 'scale(1) translateY(-6px)', boxShadow: '0 12px 30px rgba(255,177,40,0.12)' },
+    { transform: 'scale(1.06) translateY(-12px)', boxShadow: '0 18px 40px rgba(255,177,40,0.18)' },
+    { transform: 'scale(1) translateY(-6px)', boxShadow: '0 12px 30px rgba(255,177,40,0.12)' }
+  ], {
+    duration: 520,
+    easing: 'cubic-bezier(.2,.9,.3,1)'
+  });
+}
+</script>
+</body>
+</html>
