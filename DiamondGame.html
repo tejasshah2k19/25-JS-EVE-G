@@ -9,6 +9,8 @@
     <script>
 
 
+        let gameWinCount = 0;
+
         let bomb1 = parseInt(Math.random() * 10) % 9 + 1;//0.25875632569 
         let bomb2 = parseInt(Math.random() * 10) % 9 + 1;
         let bomb3 = parseInt(Math.random() * 10) % 9 + 1;
@@ -30,8 +32,23 @@
             if (id == bomb1 || id == bomb2 || id == bomb3) {
                 document.getElementById(id).src = "bomb.png";
 
+                localStorage.setItem("score",gameWinCount);
+
+
+                setTimeout(function () {
+
+                    window.location.href = "DiamondGameOver.html"
+                }, 200);
+
             } else {
                 document.getElementById(id).src = "diamond.png";
+                gameWinCount++;
+
+                document.getElementById("myScore").innerHTML = gameWinCount;
+
+                if (gameWinCount == 3) {
+                    location.href = "DiamondGameWin.html";
+                }
             }
         }
     </script>
@@ -48,7 +65,12 @@
 <body>
 
     <h1 align="center">Diamond Game</h1>
-    <br><br><br><br>
+    <br><br>
+
+    <h2>
+        <div align="center" id="myScore">0</div>
+    </h2>
+    <br><br>
     <table align="center">
 
         <tr>

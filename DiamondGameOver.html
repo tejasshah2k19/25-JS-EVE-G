@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Over</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #3b3b3b, #000000);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            width: 350px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #ff2e2e;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px red;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            font-size: 18px;
+            border-radius: 10px;
+            background: #ff2e2e;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff5555;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GAME OVER</h1>
+        <p>Better luck next time!</p>
+        <p>Your Score : <div id="myScore"></div></p>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+
+    <script>
+    
+        let score = localStorage.getItem("score");
+        document.getElementById("myScore").innerHTML = score; 
+        function restartGame() {
+            localStorage.clear();
+            window.location.href = "DiamondGame.html"; // change to your game page
+        }
+
+
+
+    </script>
+</body>
+</html>
