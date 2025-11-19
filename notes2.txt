@@ -245,3 +245,27 @@ mouse over out
 button -> click 
           double click 
 
+-----------------------------------
+
+storage ->
+    1) local storage 
+    2) session storage
+    3) cookie 
+
+
+memory ->browser -> 
+data will be in key : value pair format 
+
+    add 
+        setItem() 
+        setItem("name","James"); 
+        
+    read 
+        getItem() 
+    single remove 
+        removeItem()
+    remove all 
+        clear() 
+
+------------------------------------------------------        
+
