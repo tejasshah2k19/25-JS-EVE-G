@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="myData"></div>
+
+    <script>
+
+        let productNames = ""
+        //api call 
+        $.get("https://api.restful-api.dev/objects",function print(data){
+            console.log(data);
+
+            for(i=0;i<data.length;i++){
+                console.log(data[i].name);
+                productNames = productNames + data[i].name + "<Br><hr>";
+            }
+
+            document.getElementById("myData").innerHTML = productNames; 
+        })
+
+    </script>
+
+</body>
+
+</html>

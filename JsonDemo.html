@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div id="myData"></div>
+
+    <script>
+
+        let student = {
+            "name": "ram",
+            "city": "ahmedbad"
+        }
+
+        let data = [
+            { "name": "ram", "city": "ahmedabad" },
+            { "name": "laxman", "city": "Gnr" }
+        ]
+
+        console.log(student.name);
+        console.log(student.city);
+
+        console.log(data[0].name);
+        console.log(data[1].name);
+
+        console.log("----------------------------------------");
+        let names = "";
+        for (i = 0; i < data.length; i++) {
+            console.log(data[i].name);
+            names = names + data[i].name + "<br>";
+        }
+
+
+        document.getElementById("myData").innerHTML = names
+
+
+    </script>
+
+</body>
+
+</html>

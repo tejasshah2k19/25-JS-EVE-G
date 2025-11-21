@@ -269,3 +269,12 @@ data will be in key : value pair format
 
 ------------------------------------------------------        
 
+amazon --> 
+
+    led , iphone --> 
+
+    JSON 
+
+    {
+        "key":"value" 
+    }
